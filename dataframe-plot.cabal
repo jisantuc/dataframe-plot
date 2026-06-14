@@ -1,0 +1,50 @@
+cabal-version: 3.12
+name: dataframe-plot
+version: 0.0.0.1
+description: A rich plotting API for dataframe
+license: MIT
+license-file: LICENSE
+author: James Santucci
+maintainer: james.santucci@gmail.com
+category: Graphics
+build-type: Simple
+extra-doc-files: CHANGELOG.md
+extra-source-files:
+  README.md
+  flake.nix
+
+common warnings
+  ghc-options: -Wall
+
+library
+  import: warnings
+  -- cabal-gild: discover src
+  exposed-modules:
+    DataFrame.Plot.High
+    DataFrame.Plot.Typed.High
+    DataFrame.Plot.Typed.Low
+    DataFrame.Plot.Typed.Mid
+
+  build-depends:
+    base ^>=4.20,
+    dataframe-core,
+    dataframe-operations,
+    hvega,
+    text,
+
+  hs-source-dirs: src
+  default-language: Haskell2010
+
+test-suite dataframe-plot-test
+  import: warnings
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  other-modules:
+    Artifact.SnapshotSpec
+
+  main-is: Spec.hs
+  build-depends:
+    base ^>=4.20,
+    dataframe-plot,
+    hspec,

@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+set -e
+
+function usage() {
+    echo -n \
+"Usage: $(basename "$0")
+
+Run formatting and lint checks
+"
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+    if [ "${1:-}" = "--help" ]; then
+        usage
+    else
+        echo "Linting cabal file"
+        cabal-gild -i dataframe-plot.cabal \
+                   -m check
+
+        echo "Linting scripts to rule them all"
+        shellcheck scripts/* \
+                -e SC2038 # `find` warning for non-alphanumeric file names
+    fi
+fi
