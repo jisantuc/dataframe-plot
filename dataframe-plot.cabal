@@ -24,6 +24,7 @@ library
     DataFrame.Plot.Typed.High
     DataFrame.Plot.Typed.Low
     DataFrame.Plot.Typed.Mid
+    DataFrame.Plot.Typed.Mid.Text
 
   build-depends:
     base ^>=4.20,
@@ -42,9 +43,16 @@ test-suite dataframe-plot-test
   hs-source-dirs: test
   other-modules:
     Artifact.SnapshotSpec
+    Gen
 
   main-is: Spec.hs
   build-depends:
     base ^>=4.20,
+    dataframe-core,
     dataframe-plot,
+    filepath,
     hspec,
+    hvega,
+    random,
+    text,
+    transformers,

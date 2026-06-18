@@ -70,6 +70,7 @@
                 cabal-fmt = hp.cabal-fmt;
                 cabal-gild = hp.cabal-gild;
                 shellcheck = pkgs.shellcheck;
+                nixfmt = pkgs.nixfmt;
               };
 
               # Check that haskell-language-server works
