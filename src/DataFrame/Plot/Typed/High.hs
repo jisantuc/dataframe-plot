@@ -18,8 +18,7 @@
 module DataFrame.Plot.Typed.High (showScatter, textScatter) where
 
 import Data.Text.Lazy (Text)
-import DataFrame.Plot.Typed.Low (KnownNumericColumn)
-import DataFrame.Plot.Typed.Mid (scatter)
+import DataFrame.Plot.Typed.Mid (Scatter, scatter)
 import DataFrame.Typed.Types (TypedDataFrame)
 import qualified Graphics.Vega.VegaLite as V
 
@@ -27,9 +26,7 @@ import qualified Graphics.Vega.VegaLite as V
 -- Create a scatter plot using columns x and y and display it.
 showScatter ::
   forall x y schema xColumnType yColumnType.
-  ( KnownNumericColumn x xColumnType schema,
-    KnownNumericColumn y yColumnType schema
-  ) =>
+  (Scatter x y schema xColumnType yColumnType) =>
   TypedDataFrame schema -> IO ()
 showScatter df = plotShow (scatter @x @xColumnType @y @yColumnType @schema df)
 
@@ -39,9 +36,7 @@ showScatter df = plotShow (scatter @x @xColumnType @y @yColumnType @schema df)
 -- in notebook settings to see plots inline.
 textScatter ::
   forall x y schema xColumnType yColumnType.
-  ( KnownNumericColumn x xColumnType schema,
-    KnownNumericColumn y yColumnType schema
-  ) =>
+  (Scatter x y schema xColumnType yColumnType) =>
   TypedDataFrame schema -> Text
 textScatter df = plotText (scatter @x @xColumnType @y @yColumnType @schema df)
 

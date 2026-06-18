@@ -6,14 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1781018431,
-        "narHash": "sha256-A37XjZm84q1HrDPgVo2PUiD7ySKqTjj+luupHJFa9bs=",
-        "path": "/home/james/gitdirs/dataframe",
-        "type": "path"
+        "lastModified": 1780791104,
+        "narHash": "sha256-ppqxD83Y8UC3+aBp2uDf381Ob07oFgdgn8j7Hb2pmjY=",
+        "ref": "refs/heads/nix/js/update-flake",
+        "rev": "a9d69a6b7c1a7f195fffee215c0f3098e7da8340",
+        "revCount": 1212,
+        "type": "git",
+        "url": "file:///home/james/gitdirs/dataframe"
       },
       "original": {
-        "path": "/home/james/gitdirs/dataframe",
-        "type": "path"
+        "type": "git",
+        "url": "file:///home/james/gitdirs/dataframe"
       }
     },
     "flake-parts": {
