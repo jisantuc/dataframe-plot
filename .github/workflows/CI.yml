@@ -19,7 +19,7 @@ jobs:
       with:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-    - run: mkdir -p snapshots && nix develop --command cabal test
+    - run: mkdir -p snapshots && nix develop --command ./scripts/ci
     - name: Upload test artifacts
       uses: actions/upload-artifact@v4
       with:
