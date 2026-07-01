@@ -1,6 +1,6 @@
 {
   inputs = {
-    dataframe.url = "/home/james/gitdirs/dataframe";
+    dataframe.url = "github:jisantuc/dataframe/nix/js/update-flake";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     haskell-flake.url = "github:srid/haskell-flake";
