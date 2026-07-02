@@ -1,7 +1,7 @@
 {
   inputs = {
     dataframe.url = "github:jisantuc/dataframe/nix/js/update-flake";
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.follows = "dataframe/nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     haskell-flake.url = "github:srid/haskell-flake";
   };
